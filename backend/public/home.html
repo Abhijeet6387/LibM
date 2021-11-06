@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Library-Management-System</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/model.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  
+</head>
+<body>
+  <!--header-->
+    <div class="header">
+        <div style="background-color:#6833FF">
+            <div style="text-align: left; color: #ECF0F1;">
+              <img  href="file:///C:/Users/abhij/Desktop/LibM/public/home.html" src="images/logo.png" alt="logo" />
+              <h2>Library Management System</h2>    
+            </div>
+        </div>
+    </div>
+  <!--navbar-->
+    <div class="topnav">
+        <a class="active" href="#"><span class="fa fa-home"  aria-hidden="true" style="font-size:20px"></span>Home</a>
+        <a href="#"><span class="fa fa-book" aria-hidden="true" style="font-size:20px"></span>Books</a>
+        <a href="#"><span class="fa fa-clock-o" aria-hidden="true" style="font-size:20px"></span>Availability</a>
+        <a href="#"><span class="fa fa-check" aria-hidden="true" style="font-size:20px"></span>Issue Book</a>
+        <a onclick="document.getElementById('id01').style.display='block'" style="float: right;"><span class="fa fa-user-circle-o" aria-hidden="true" style="font-size:20px"></span>Login</a>
+    </div>
+    <!--modal form-->
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+    
+        <div class="container-fluid" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+    <!--main content-->
+   
+    <div id="page-container">
+      <div id="content-wrap">
+        <div class="card container-fluid">
+          <div class="card-body">
+              <h2 class="mb-5" style="text-align: center;">What is LMS ?</h2>
+                <p>A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members’ subscriptions and profiles.
+                  Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.</p>
+                <hr>
+                <p>A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members’ subscriptions and profiles.
+                  Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.</p>
+                <hr>
+                <p>A Library Management System is a software built to handle the primary housekeeping functions of a library. Libraries rely on library management systems to manage asset collections as well as relationships with their members. Library management systems help libraries keep track of the books and their checkouts, as well as members’ subscriptions and profiles.
+                  Library management systems also involve maintaining the database for entering new books and recording books that have been borrowed with their respective due dates.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <!--footer-->
+      <div class="footer-basic">
+      <footer>
+        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Home</a></li>
+            <li class="list-inline-item"><a href="#">Services</a></li>
+            <li class="list-inline-item"><a href="#">About</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">Company Name © 2018</p>
+      </footer>
+      </div>
+
+
+    
+      
+  <!--javascript-->
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id01');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+    </script>
+</body>
+</html>

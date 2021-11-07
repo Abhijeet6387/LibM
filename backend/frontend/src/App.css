@@ -14,3 +14,19 @@ nav img {
   color: white;
   font-size: 24px;
 }
+.card {
+  margin-top: 5px;
+  /* margin-bottom: 50px; */
+  opacity: 0.85;
+}
+.card h4 {
+  margin-top: 3px;
+  text-align: center;
+  color: green;
+}
+.card section {
+  margin-top: 25px;
+  font-size: small;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

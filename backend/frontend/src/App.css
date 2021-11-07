@@ -5,17 +5,6 @@
 a {
   color: white;
 }
-/* css me don't pass as values */
-.foot {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-.foot p {
-  font-weight: bold;
-  color: white;
-}
 nav img {
   height: 30px;
   width: 30px;

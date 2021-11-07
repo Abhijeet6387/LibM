@@ -26,7 +26,7 @@ export default function Navbar() {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon">
-              <i class="fa fa-navicon"></i>
+              <i className="fa fa-navicon"></i>
             </span>
           </button>
 

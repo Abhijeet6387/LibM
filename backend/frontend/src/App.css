@@ -20,9 +20,10 @@ nav img {
   opacity: 0.85;
 }
 .card h4 {
-  margin-top: 3px;
+  margin-top: 10px;
   text-align: center;
   color: green;
+  font-weight: bold;
 }
 .card section {
   margin-top: 25px;

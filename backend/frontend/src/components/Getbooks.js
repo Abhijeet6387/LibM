@@ -122,7 +122,7 @@ export default function Getbooks() {
       <div className="container">
         <div className="card">
           <h4>List Of Books</h4>
-          <div className="card-body">
+          <div className="card-body table-responsive">
             {booklist.length === 0 ? (
               <div>No books available</div>
             ) : (

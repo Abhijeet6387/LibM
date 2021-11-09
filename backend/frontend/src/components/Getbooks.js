@@ -110,6 +110,7 @@ export default function Getbooks() {
       .delete("/deletebook/" + id)
       .then((res) => {
         console.log(res);
+        alert("Delete this book ?");
         getbooks();
       })
       .catch((err) => {

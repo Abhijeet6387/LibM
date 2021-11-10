@@ -2,6 +2,11 @@
   color: white;
   background-color: green;
 }
+.nav-link i {
+  color: white;
+  margin-left: 3px;
+  margin-right: 3px;
+}
 a {
   color: white;
 }

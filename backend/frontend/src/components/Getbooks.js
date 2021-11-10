@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
-// import { Button } from "react-bootstrap";
 import axios from "axios";
 
 export default function Getbooks() {
@@ -120,7 +119,7 @@ export default function Getbooks() {
   };
 
   return (
-    <div>
+    <>
       <div className="container">
         <div className="card container">
           <h4>
@@ -244,6 +243,6 @@ export default function Getbooks() {
           </Button>
         </Modal.Footer> */}
       </Modal>
-    </div>
+    </>
   );
 }

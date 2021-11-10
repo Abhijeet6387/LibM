@@ -1,6 +1,12 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 export default function Navbar() {
+  const [showModal, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <div className="container-fluid">
@@ -33,34 +39,48 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item hover-link">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/home">
                   <i className="fa fa-fw fa-home"></i>Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item hover-link">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/books">
                   <i className="fa fa-fw fa-book"></i>Books
-                </a>
+                </Link>
               </li>
-              <li className="nav-item hover-link">
+              {/* <li className="nav-item hover-link">
                 <a className="nav-link" href="/">
                   <i className="fa fa-fw fa-clock-o"></i>Availability
                 </a>
+              </li> */}
+              <li className="nav-item hover-link">
+                <Link className="nav-link" to="/issuebook">
+                  <i class="fa fa-fw fa-id-card"></i>Issue Book
+                </Link>
               </li>
               <li className="nav-item hover-link">
-                <a className="nav-link" href="/">
-                  <i className="fa fa-fw fa-check"></i>Issue Book
-                </a>
-              </li>
-              <li className="nav-item hover-link">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" onClick={handleShow} to="/login">
                   <i className="fa fa-fw fa-user"></i>Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </nav>
       </div>
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }

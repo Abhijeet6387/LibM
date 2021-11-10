@@ -133,9 +133,9 @@ export default function Getbooks() {
               <table className="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">Sno</th>
+                    <th scope="col">S.No</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Author's Name</th>
+                    <th scope="col">Author</th>
                     <th scope="col">Subject</th>
                     <th scope="col">Availability</th>
                   </tr>

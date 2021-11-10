@@ -122,9 +122,7 @@ export default function Getbooks() {
     <>
       <div className="container">
         <div className="card container">
-          <h4>
-            Book List <i className="fa fa-plus"></i>
-          </h4>
+          <h4>Book List</h4>
           <div className="card-body table-responsive">
             {booklist.length === 0 ? (
               <p>Sorry, Books are currently unavailable !</p>

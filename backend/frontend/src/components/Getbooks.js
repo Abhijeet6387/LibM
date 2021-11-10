@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import axios from "axios";
 
 export default function Getbooks() {
@@ -121,11 +122,13 @@ export default function Getbooks() {
   return (
     <div>
       <div className="container">
-        <div className="card">
-          <h4>List Of Books</h4>
+        <div className="card container">
+          <h4>
+            Book List <i className="fa fa-plus"></i>
+          </h4>
           <div className="card-body table-responsive">
             {booklist.length === 0 ? (
-              <div>No books available</div>
+              <p>Sorry, Books are currently unavailable !</p>
             ) : (
               <table className="table table-hover">
                 <thead>
@@ -135,11 +138,9 @@ export default function Getbooks() {
                     <th scope="col">Author's Name</th>
                     <th scope="col">Subject</th>
                     <th scope="col">Availability</th>
-                    <th>Delete</th>
-                    <th>Update</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="getbooks">
                   {booklist.map((singlebook, index) => (
                     <tr>
                       <td>{index + 1}</td>
@@ -147,19 +148,29 @@ export default function Getbooks() {
                       <td>{singlebook.Author}</td>
                       <td>{singlebook.Subject}</td>
                       <td>
-                        {singlebook.Availability.toString() === "true"
-                          ? "Available"
-                          : "Not Available"}
+                        {singlebook.Availability.toString() === "true" ? (
+                          <i
+                            className="fa fa-wh fa-check"
+                            style={{ marginLeft: "25px" }}
+                          ></i>
+                        ) : (
+                          <i
+                            className="fa fa-wh fa-times"
+                            style={{ marginLeft: "25px" }}
+                          ></i>
+                        )}
                       </td>
                       <td>
-                        <button onClick={() => handleDelete(singlebook._id)}>
-                          Delete
-                        </button>
+                        <i
+                          className="fa fa-fw fa-edit"
+                          onClick={() => openModal(singlebook)}
+                        ></i>
                       </td>
                       <td>
-                        <button onClick={() => openModal(singlebook)}>
-                          Update
-                        </button>
+                        <i
+                          className="fa fa-fw fa-trash"
+                          onClick={() => handleDelete(singlebook._id)}
+                        ></i>
                       </td>
                     </tr>
                   ))}
@@ -169,9 +180,17 @@ export default function Getbooks() {
           </div>
         </div>
       </div>
+
+      {/* Modal for update/edit book */}
       <Modal show={isOpen} onHide={closeModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+        {/* <Modal.Header closeButton> */}
+        <Modal.Header>
+          <Modal.Title>Edit Book </Modal.Title>
+          <i
+            className="fa fa-times"
+            onClick={closeModal}
+            style={{ fontSize: "28px" }}
+          ></i>
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={onUpdateForm} className="container">
@@ -205,16 +224,25 @@ export default function Getbooks() {
                 onChange={onChangeSubject}
               />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <br />
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{ float: "right" }}
+            >
               Submit
             </button>
           </form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={closeModal}>
+        {/* <Modal.Footer>
+          <Button
+            className="btn-danger"
+            variant="secondary"
+            onClick={closeModal}
+          >
             Close
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </div>
   );

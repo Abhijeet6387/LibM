@@ -21,13 +21,32 @@ nav img {
 }
 .card h4 {
   margin-top: 10px;
-  text-align: center;
   color: green;
   font-weight: bold;
 }
+.card h4 i {
+  color: black;
+  float: right;
+}
+
+.card-body p {
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
 .card section {
   margin-top: 25px;
   font-size: small;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+}
+.getbooks i {
+  font-size: 20px;
+}
+.fa-times {
+  color: red;
+}
+.getbooks .fa-check {
+  color: green;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Modal } from "react-bootstrap";
 import axios from "axios";
 
@@ -122,57 +122,74 @@ export default function Getbooks() {
     <>
       <div className="container">
         <div className="card container">
-          <h4>Book List</h4>
-          <div className="card-body table-responsive">
+          <div className="card-body table-responsive ">
             {booklist.length === 0 ? (
               <p>Sorry, Books are currently unavailable !</p>
             ) : (
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">S.No</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Availability</th>
-                  </tr>
-                </thead>
-                <tbody className="getbooks">
-                  {booklist.map((singlebook, index) => (
+              <div className="table-wrapper">
+                <div className="table-title">
+                  <div className="row">
+                    <div className="col-sm-8">
+                      <h4>Book List</h4>
+                    </div>
+                    <div className="col-sm-4">
+                      <div className="search-box">
+                        <i className="fa fa-wh fa-search"></i>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Search"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <table className="table table-hover">
+                  <thead>
                     <tr>
-                      <td>{index + 1}</td>
-                      <td>{singlebook.Name}</td>
-                      <td>{singlebook.Author}</td>
-                      <td>{singlebook.Subject}</td>
-                      <td>
-                        {singlebook.Availability.toString() === "true" ? (
-                          <i
-                            className="fa fa-wh fa-check"
-                            style={{ marginLeft: "25px" }}
-                          ></i>
-                        ) : (
-                          <i
-                            className="fa fa-wh fa-times"
-                            style={{ marginLeft: "25px" }}
-                          ></i>
-                        )}
-                      </td>
-                      <td>
-                        <i
-                          className="fa fa-fw fa-edit"
-                          onClick={() => openModal(singlebook)}
-                        ></i>
-                      </td>
-                      <td>
-                        <i
-                          className="fa fa-fw fa-trash"
-                          onClick={() => handleDelete(singlebook._id)}
-                        ></i>
-                      </td>
+                      <th scope="col">S.No</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Author</th>
+                      <th scope="col">Subject</th>
+                      <th scope="col">Availability</th>
+                      <th scope="col">Actions</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="getbooks">
+                    {booklist.map((singlebook, index) => (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{singlebook.Name}</td>
+                        <td>{singlebook.Author}</td>
+                        <td>{singlebook.Subject}</td>
+                        <td>
+                          {singlebook.Availability.toString() === "true" ? (
+                            <i
+                              className="fa fa-wh fa-check"
+                              style={{ marginLeft: "25px" }}
+                            ></i>
+                          ) : (
+                            <i
+                              className="fa fa-wh fa-times"
+                              style={{ marginLeft: "25px" }}
+                            ></i>
+                          )}
+                        </td>
+                        <td>
+                          <i
+                            className="fa fa-fw fa-pencil"
+                            onClick={() => openModal(singlebook)}
+                          ></i>
+                          <i
+                            className="fa fa-fw fa-trash"
+                            onClick={() => handleDelete(singlebook._id)}
+                          ></i>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
           </div>
         </div>

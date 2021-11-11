@@ -55,7 +55,7 @@ export default function Navbar() {
               </li> */}
               <li className="nav-item hover-link">
                 <Link className="nav-link" to="/issuebook">
-                  <i class="fa fa-fw fa-id-card"></i>Issue Book
+                  <i className="fa fa-fw fa-id-card"></i>Issue Book
                 </Link>
               </li>
               <li className="nav-item hover-link">

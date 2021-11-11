@@ -25,9 +25,9 @@ nav img {
 }
 .card h4 {
   margin-top: 10px;
+  margin-left: 20px;
   color: green;
   font-weight: bold;
-  text-align: center;
 }
 .card h4 i {
   color: black;
@@ -46,12 +46,49 @@ nav img {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
+.search-box {
+  display: flex;
+  margin-left: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 .getbooks i {
   font-size: 20px;
 }
 .fa-times {
   color: red;
 }
+.fa-trash {
+  color: red;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.fa-pencil {
+  color: orange;
+  margin-left: 3px;
+  margin-right: 3px;
+}
 .getbooks .fa-check {
   color: green;
+}
+.search-box {
+  position: relative;
+  float: right;
+}
+.search-box input {
+  height: 34px;
+  border-radius: 20px;
+  padding-left: 35px;
+  border-color: green;
+  box-shadow: none;
+}
+.search-box i {
+  color: black;
+  position: absolute;
+  font-size: 19px;
+  top: 8px;
+  left: 10px;
+}
+.table {
+  margin-top: 15px;
 }

@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import Getbooks from "./components/Getbooks";
 import AddBook from "./components/AddBook";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Issuebook from "./components/Issuebook";
 
 function App() {
   return (
@@ -18,7 +17,6 @@ function App() {
           <Route path="/home" element={<Home />}></Route>
           <Route path="/books" element={<Getbooks />}></Route>
           <Route path="/addbook" element={<AddBook />}></Route>
-          <Route path="/issuebook" element={<Issuebook />}></Route>
           <Route path="/login" element={<Home />}></Route>
         </Routes>
       </Router>

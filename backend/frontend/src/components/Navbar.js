@@ -53,11 +53,11 @@ export default function Navbar() {
                   <i className="fa fa-fw fa-plus"></i>Add Book
                 </Link>
               </li>
-              <li className="nav-item hover-link">
+              {/* <li className="nav-item hover-link">
                 <Link className="nav-link" to="/issuebook">
                   <i className="fa fa-fw fa-id-card"></i>Issue Book
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item hover-link">
                 <Link className="nav-link" onClick={handleShow} to="/login">
                   <i className="fa fa-fw fa-user"></i>Login
@@ -67,6 +67,7 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
+
       {/* LOGIN MODAL */}
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
@@ -79,7 +80,7 @@ export default function Navbar() {
         </Modal.Header>
 
         <Modal.Body>
-          <form className="container">
+          <form autocomplete="off" className="container">
             <div className="form-group">
               <label>Username</label>
               <input

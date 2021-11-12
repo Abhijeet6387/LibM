@@ -3,6 +3,7 @@ const router = express.Router();
 const Book = require("../models/Bookmodel.js");
 
 router.post("/addbook", (req, res) => {
+  console.log(req.body, "from body");
   Book.create(req.body, function (err, newlycreatedbook) {
     if (err) {
       console.log(err);
@@ -69,6 +70,7 @@ router.post("/issuebook/:id", function (req, res) {
     }
   });
 });
+
 // router.get("/checkavailability",function(req,res){
 //     Book.find({ Name: req.query.Name, Author: req.query.Author},function(err,bookresult){
 //         if(err)

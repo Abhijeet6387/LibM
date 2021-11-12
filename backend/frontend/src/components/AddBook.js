@@ -20,7 +20,6 @@ export default function Books() {
     if (bookname === "" || author === "" || subject === "") {
       alert("Please fill the details");
     } else {
-      console.log(bookname, author, subject);
       axios
         .post("/addbook", {
           Name: bookname,
@@ -29,15 +28,14 @@ export default function Books() {
         })
         .then((res) => {
           alert("book added");
-          console.log(res.data);
-          setBookname("");
-          setAuthor("");
-          setSubject("");
         })
         .catch((err) => {
           console.log(err);
         });
     }
+    setBookname("");
+    setAuthor("");
+    setSubject("");
   };
   return (
     <div className="container">
@@ -46,7 +44,11 @@ export default function Books() {
           <b>Add Book</b>
         </div>
         <div className="card-body">
-          <form onSubmit={onSubmitForm} className="container">
+          <form
+            autocomplete="off"
+            onSubmit={onSubmitForm}
+            className="container"
+          >
             <div className="form-group">
               <label>Name</label>
               <input
@@ -54,6 +56,7 @@ export default function Books() {
                 className="form-control"
                 id="addbook"
                 placeholder="Enter Name"
+                value={bookname}
                 onChange={onChangeBookName}
               />
             </div>
@@ -64,6 +67,7 @@ export default function Books() {
                 className="form-control"
                 id="addauthor"
                 placeholder="Enter Author's Name"
+                value={author}
                 onChange={onChangeAuthor}
               />
             </div>
@@ -74,6 +78,7 @@ export default function Books() {
                 className="form-control"
                 id="addsubject"
                 placeholder="Enter Subject"
+                value={subject}
                 onChange={onChangeSubject}
               />
             </div>

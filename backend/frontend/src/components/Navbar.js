@@ -48,11 +48,11 @@ export default function Navbar() {
                   <i className="fa fa-fw fa-book"></i>Books
                 </Link>
               </li>
-              {/* <li className="nav-item hover-link">
-                <a className="nav-link" href="/">
-                  <i className="fa fa-fw fa-clock-o"></i>Availability
-                </a>
-              </li> */}
+              <li className="nav-item hover-link">
+                <Link className="nav-link" to="/addbook">
+                  <i className="fa fa-fw fa-plus"></i>Add Book
+                </Link>
+              </li>
               <li className="nav-item hover-link">
                 <Link className="nav-link" to="/issuebook">
                   <i className="fa fa-fw fa-id-card"></i>Issue Book
@@ -67,6 +67,7 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
+      {/* LOGIN MODAL */}
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>Login</Modal.Title>

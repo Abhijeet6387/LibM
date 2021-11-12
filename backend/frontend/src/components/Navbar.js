@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default function Navbar() {
   const [showModal, setShow] = useState(false);
@@ -68,18 +68,47 @@ export default function Navbar() {
         </nav>
       </div>
       <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Header>
+          <Modal.Title>Login</Modal.Title>
+          <i
+            className="fa fa-times"
+            onClick={handleClose}
+            style={{ fontSize: "28px" }}
+          ></i>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
+
+        <Modal.Body>
+          <form className="container">
+            <div className="form-group">
+              <label>Username</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Username"
+              />
+            </div>
+            <div className="form-group">
+              <label>Password</label>
+              <input
+                className="form-control"
+                type="password"
+                placeholder="Enter Password"
+                required
+              />
+              <small style={{ float: "right" }}>
+                Don't have a account yet?
+                <a href="#">
+                  <b> Register</b>
+                </a>
+              </small>
+            </div>
+
+            <br />
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </form>
+        </Modal.Body>
       </Modal>
     </>
   );

@@ -92,3 +92,12 @@ nav img {
 .table {
   margin-top: 15px;
 }
+small {
+  margin-top: 10px;
+}
+small a {
+  color: rgb(39, 202, 39);
+}
+small a :hover {
+  color: green;
+}

@@ -30,8 +30,10 @@ nav img {
   font-weight: bold;
 }
 .card h4 i {
-  color: black;
-  float: right;
+  color: green;
+  /* float: right; */
+  margin-left: 15px;
+  font-size: large;
 }
 
 .card-body p {

@@ -130,7 +130,9 @@ export default function Getbooks() {
                 <div className="table-title">
                   <div className="row">
                     <div className="col-sm-8">
-                      <h4>Book List</h4>
+                      <h4>
+                        Book List<i className="fa fa-wh fa-plus"></i>
+                      </h4>
                     </div>
                     <div className="col-sm-4">
                       <div className="search-box">

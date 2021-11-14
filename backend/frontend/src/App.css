@@ -44,6 +44,7 @@ nav img {
 
 .card section {
   margin-top: 25px;
+  padding-left: 25px;
   font-size: small;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
@@ -57,20 +58,23 @@ nav img {
 .getbooks i {
   font-size: 20px;
 }
+.actions i {
+  margin-left: 0px;
+  margin-right: 10px;
+}
 .fa-times {
   color: red;
 }
 .fa-trash {
   color: red;
-  margin-left: 3px;
-  margin-right: 3px;
 }
 .fa-pencil {
   color: orange;
-  margin-left: 3px;
-  margin-right: 3px;
 }
-.getbooks .fa-check {
+/* .fa-plus {
+  color: blue;
+} */
+.fa-check-circle {
   color: green;
 }
 .search-box {
@@ -102,4 +106,7 @@ small a {
 }
 small a :hover {
   color: green;
+}
+.Addbook {
+  margin-right: 5px;
 }

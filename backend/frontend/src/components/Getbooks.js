@@ -120,64 +120,63 @@ export default function Getbooks() {
 
   return (
     <>
-      <div className="container">
-        <div className="card container">
-          <div className="card-body table-responsive ">
-            {booklist.length === 0 ? (
-              <p>Sorry, Books are currently unavailable !</p>
-            ) : (
-              <div className="table-wrapper">
-                <div className="table-title">
-                  <div className="row">
-                    <div className="col-sm-8">
-                      <h4>
-                        Book List<i className="fa fa-wh fa-plus"></i>
-                      </h4>
-                    </div>
-                    <div className="col-sm-4">
-                      <div className="search-box">
-                        <i className="fa fa-wh fa-search"></i>
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Search"
-                        />
-                      </div>
+      <div className="card container">
+        <div className="card-body container table-responsive ">
+          {booklist.length === 0 ? (
+            <p>Sorry, Books are currently unavailable !</p>
+          ) : (
+            <div className="table-wrapper">
+              <div className="table-title">
+                <div className="row">
+                  <div className="col-sm-8">
+                    <h4>Book List</h4>
+                  </div>
+                  <div className="col-sm-4">
+                    <div className="search-box">
+                      <i className="fa fa-wh fa-search"></i>
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Search"
+                      />
                     </div>
                   </div>
                 </div>
-                <table className="table table-hover">
-                  <thead>
+              </div>
+              <table className="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Availability</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="getbooks">
+                  {booklist.map((singlebook, index) => (
                     <tr>
-                      <th scope="col">S.No</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Author</th>
-                      <th scope="col">Subject</th>
-                      <th scope="col">Availability</th>
-                      <th scope="col">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody className="getbooks">
-                    {booklist.map((singlebook, index) => (
-                      <tr>
-                        <td>{index + 1}</td>
-                        <td>{singlebook.Name}</td>
-                        <td>{singlebook.Author}</td>
-                        <td>{singlebook.Subject}</td>
-                        <td>
-                          {singlebook.Availability.toString() === "true" ? (
-                            <i
-                              className="fa fa-wh fa-check"
-                              style={{ marginLeft: "25px" }}
-                            ></i>
-                          ) : (
-                            <i
-                              className="fa fa-wh fa-times"
-                              style={{ marginLeft: "25px" }}
-                            ></i>
-                          )}
-                        </td>
-                        <td>
+                      <td>{index + 1}</td>
+                      <td>{singlebook.Name}</td>
+                      <td>{singlebook.Author}</td>
+                      <td>{singlebook.Subject}</td>
+                      <td>
+                        {singlebook.Availability.toString() === "true" ? (
+                          <i
+                            className=" fa fa-wh fa-light fa-check-circle"
+                            style={{ marginLeft: "25px" }}
+                          ></i>
+                        ) : (
+                          <i
+                            className="fa fa-wh fa-times"
+                            style={{ marginLeft: "25px" }}
+                          ></i>
+                        )}
+                      </td>
+                      <td>
+                        <div className="actions">
+                          {/* <i className="fa fa-wh fa-plus"></i> */}
                           <i
                             className="fa fa-fw fa-pencil"
                             onClick={() => openModal(singlebook)}
@@ -186,14 +185,20 @@ export default function Getbooks() {
                             className="fa fa-fw fa-trash"
                             onClick={() => handleDelete(singlebook._id)}
                           ></i>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+        <div className="card-footer">
+          <button className="Addbook btn btn-outline-primary">Add Book</button>
+          <button className="Issuebook btn btn-outline-primary">
+            Issue Book
+          </button>
         </div>
       </div>
 

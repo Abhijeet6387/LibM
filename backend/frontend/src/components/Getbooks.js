@@ -143,54 +143,56 @@ export default function Getbooks() {
                   </div>
                 </div>
               </div>
-              <table className="table table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">S.No</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Subject</th>
-                    <th scope="col">Availability</th>
-                    <th scope="col">Actions</th>
-                  </tr>
-                </thead>
-                <tbody className="getbooks">
-                  {booklist.map((singlebook, index) => (
+              <div style={{ overflow: "auto", height: "500px" }}>
+                <table className="table table-hover">
+                  <thead>
                     <tr>
-                      <td>{index + 1}</td>
-                      <td>{singlebook.Name}</td>
-                      <td>{singlebook.Author}</td>
-                      <td>{singlebook.Subject}</td>
-                      <td>
-                        {singlebook.Availability.toString() === "true" ? (
-                          <i
-                            className=" fa fa-wh fa-light fa-check-circle"
-                            style={{ marginLeft: "25px" }}
-                          ></i>
-                        ) : (
-                          <i
-                            className="fa fa-wh fa-times"
-                            style={{ marginLeft: "25px" }}
-                          ></i>
-                        )}
-                      </td>
-                      <td>
-                        <div className="actions">
-                          {/* <i className="fa fa-wh fa-plus"></i> */}
-                          <i
-                            className="fa fa-fw fa-pencil"
-                            onClick={() => openModal(singlebook)}
-                          ></i>
-                          <i
-                            className="fa fa-fw fa-trash"
-                            onClick={() => handleDelete(singlebook._id)}
-                          ></i>
-                        </div>
-                      </td>
+                      <th scope="col">S.No</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Author</th>
+                      <th scope="col">Subject</th>
+                      <th scope="col">Availability</th>
+                      <th scope="col">Actions</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="getbooks">
+                    {booklist.map((singlebook, index) => (
+                      <tr>
+                        <td>{index + 1}</td>
+                        <td>{singlebook.Name}</td>
+                        <td>{singlebook.Author}</td>
+                        <td>{singlebook.Subject}</td>
+                        <td>
+                          {singlebook.Availability.toString() === "true" ? (
+                            <i
+                              className=" fa fa-wh fa-light fa-check-circle"
+                              style={{ marginLeft: "25px" }}
+                            ></i>
+                          ) : (
+                            <i
+                              className="fa fa-wh fa-times"
+                              style={{ marginLeft: "25px" }}
+                            ></i>
+                          )}
+                        </td>
+                        <td>
+                          <div className="actions">
+                            {/* <i className="fa fa-wh fa-plus"></i> */}
+                            <i
+                              className="fa fa-fw fa-pencil"
+                              onClick={() => openModal(singlebook)}
+                            ></i>
+                            <i
+                              className="fa fa-fw fa-trash"
+                              onClick={() => handleDelete(singlebook._id)}
+                            ></i>
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           )}
         </div>

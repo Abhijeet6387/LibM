@@ -99,7 +99,7 @@ export default function Navbar() {
               />
               <small style={{ float: "right" }}>
                 Don't have a account yet?
-                <a href="#">
+                <a href="#register">
                   <b> Register</b>
                 </a>
               </small>

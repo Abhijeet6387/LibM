@@ -60,15 +60,11 @@ export default function Navbar() {
                 </Link>
               </li>
               {/* <li className="nav-item hover-link">
-                <Link className="nav-link" to="/issuebook">
-                  <i className="fa fa-fw fa-id-card"></i>Issue Book
-                </Link>
-              </li> */}
-              {/* <li className="nav-item hover-link">
                 <Link className="nav-link" onClick={handleShow} to="/home">
                   <i className="fa fa-fw fa-user"></i>Profile
                 </Link>
-              </li> */}
+              </li>
+          */}
             </ul>
           </div>
         </nav>

@@ -113,3 +113,6 @@ small a :hover {
 .Addbook {
   margin-right: 5px;
 }
+.issue :hover {
+  color: aliceblue;
+}

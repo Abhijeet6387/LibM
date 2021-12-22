@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Getbooks() {
@@ -7,6 +8,7 @@ export default function Getbooks() {
   const [bookname, setBookname] = useState("");
   const [author, setAuthor] = useState("");
   const [subject, setSubject] = useState("");
+  const [availability, setAvailability] = useState(true);
   const [id, setId] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isViewOpen, setIsViewOpen] = useState(false);
@@ -25,6 +27,7 @@ export default function Getbooks() {
     setBookname(singlebook.Name);
     setAuthor(singlebook.Author);
     setSubject(singlebook.Subject);
+    setAvailability(singlebook.Availability.toString());
     setIsViewOpen(true);
   };
 
@@ -261,14 +264,26 @@ export default function Getbooks() {
           <div className="row">
             <p className="col"> Name: {bookname}</p>
             <p className="col"> Subject: {subject}</p>
+          </div>
+          <div className="row">
             <p className="col"> Author: {author}</p>
+            <p className="col">
+              {availability === "true"
+                ? "Availability: Yes"
+                : "Availability: No"}
+            </p>
           </div>
           <button
             type="button"
-            className="btn btn-outline-primary btn-sm"
-            // onClick={() => issueBook()}
+            className="btn btn-success btn-sm"
+            disabled={availability === "false"}
           >
-            Issue {bookname}
+            <Link
+              to={availability === "true" ? "/issuebook" : ""}
+              style={{ color: "white" }}
+            >
+              Issue Book
+            </Link>
           </button>
         </Modal.Body>
       </Modal>

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { Modal } from "react-bootstrap";
+import React from "react";
+// import React, { useState } from "react";
+// import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default function Navbar() {
-  const [showModal, setShow] = useState(false);
+  // const [showModal, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
   return (
     <>
@@ -53,25 +54,30 @@ export default function Navbar() {
                   <i className="fa fa-fw fa-plus"></i>Add Book
                 </Link>
               </li>
+              <li className="nav-item hover-link">
+                <Link className="nav-link" to="/signin">
+                  <i className="fa fa-fw fa-sign-in"></i>Sign In
+                </Link>
+              </li>
               {/* <li className="nav-item hover-link">
                 <Link className="nav-link" to="/issuebook">
                   <i className="fa fa-fw fa-id-card"></i>Issue Book
                 </Link>
               </li> */}
-              <li className="nav-item hover-link">
-                <Link className="nav-link" onClick={handleShow} to="/login">
-                  <i className="fa fa-fw fa-user"></i>Login
+              {/* <li className="nav-item hover-link">
+                <Link className="nav-link" onClick={handleShow} to="/home">
+                  <i className="fa fa-fw fa-user"></i>Profile
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>
       </div>
 
       {/* LOGIN MODAL */}
-      <Modal show={showModal} onHide={handleClose}>
+      {/* <Modal show={showModal} onHide={handleClose}>
         <Modal.Header>
-          <Modal.Title>Login</Modal.Title>
+          <Modal.Title>Profile</Modal.Title>
           <i
             className="fa fa-times"
             onClick={handleClose}
@@ -79,39 +85,8 @@ export default function Navbar() {
           ></i>
         </Modal.Header>
 
-        <Modal.Body>
-          <form autocomplete="off" className="container">
-            <div className="form-group">
-              <label>Username</label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter Username"
-              />
-            </div>
-            <div className="form-group">
-              <label>Password</label>
-              <input
-                className="form-control"
-                type="password"
-                placeholder="Enter Password"
-                required
-              />
-              <small style={{ float: "right" }}>
-                Don't have a account yet?
-                <a href="#register">
-                  <b> Register</b>
-                </a>
-              </small>
-            </div>
-
-            <br />
-            <button type="submit" className="btn btn-primary">
-              Submit
-            </button>
-          </form>
-        </Modal.Body>
-      </Modal>
+        <Modal.Body></Modal.Body>
+      </Modal> */}
     </>
   );
 }

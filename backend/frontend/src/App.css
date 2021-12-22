@@ -24,16 +24,14 @@ nav img {
   opacity: 0.85;
 }
 .card h4 {
-  margin-top: 10px;
-  margin-left: 20px;
+  text-align: center;
   color: green;
   font-weight: bold;
 }
-.card h4 i {
-  color: green;
-  /* float: right; */
-  margin-left: 15px;
-  font-size: large;
+
+.cardhw {
+  height: auto;
+  width: 600px;
 }
 
 .card-body p {

@@ -4,6 +4,8 @@ import Background from "./components/Background";
 import Home from "./components/Home";
 import Getbooks from "./components/Getbooks";
 import AddBook from "./components/AddBook";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -17,7 +19,8 @@ function App() {
           <Route path="/home" element={<Home />}></Route>
           <Route path="/books" element={<Getbooks />}></Route>
           <Route path="/addbook" element={<AddBook />}></Route>
-          <Route path="/login" element={<Home />}></Route>
+          <Route path="/signin" element={<Login />}></Route>
+          <Route path="/signup" element={<Register />}></Route>
         </Routes>
       </Router>
     </>

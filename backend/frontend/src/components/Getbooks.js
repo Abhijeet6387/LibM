@@ -112,7 +112,7 @@ export default function Getbooks() {
               <div className="table-title">
                 <div className="row">
                   <div className="col-sm-8">
-                    <h4>Book List</h4>
+                    <h4 className="float-left">Book List</h4>
                   </div>
                   <div className="col-sm-4">
                     <div className="search-box">
@@ -164,14 +164,17 @@ export default function Getbooks() {
                             <i
                               className="fa fa-fw fa-pencil"
                               onClick={() => openModal(singlebook)}
+                              title="Update"
                             ></i>
                             <i
                               className="fa fa-fw fa-trash"
                               onClick={() => handleDelete(singlebook._id)}
+                              title="Delete"
                             ></i>
                             <i
                               className="fa fa-wh fa-eye"
                               onClick={() => openViewModal(singlebook)}
+                              title="View"
                             ></i>
                           </div>
                         </td>

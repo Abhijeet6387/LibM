@@ -1,6 +1,6 @@
 # libM
-<strong>libM</strong> is basically a simple library management system that helps effective management of books. 
-Library management systems help libraries keep track of the books and stocks easily and efficiently.  
+<strong>libM</strong> is basically a simple library management system that helps in effective management of books. 
+Library management systems help libraries to keep track of the books and stocks easily and efficiently.  
 
 <b>Key Features:</b>
 

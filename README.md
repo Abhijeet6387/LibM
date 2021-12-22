@@ -5,7 +5,7 @@ Library management systems help libraries keep track of the books and stocks eas
 <b>Key Features:</b>
 
 It includes features to add a book to the stock, edit and modify/update a particular book. A user can perform action if and only if he/she is succesfully logged in to the application. User can also issue book(s) of his interest for variable time periods.
-The login feature of the application is implemented with help <b>react-google-login</b> which is a "Google oAUth Sign-in / Log-in Component for React".
+The login feature of the application is implemented with help custom components and a database of users".
 
 
 <h4>Technologies and Approaches Used</h4>

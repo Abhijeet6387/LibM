@@ -57,10 +57,12 @@ nav img {
 }
 .getbooks i {
   font-size: 20px;
+  cursor: pointer;
 }
 .actions i {
   margin-left: 0px;
   margin-right: 10px;
+  cursor: pointer;
 }
 .fa-times {
   color: red;
@@ -70,6 +72,9 @@ nav img {
 }
 .fa-pencil {
   color: orange;
+}
+.fa-eye {
+  color: blue;
 }
 /* .fa-plus {
   color: blue;

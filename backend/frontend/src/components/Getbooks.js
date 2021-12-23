@@ -198,15 +198,13 @@ export default function Getbooks() {
       {/* Modal for update/edit book */}
 
       <Modal show={isOpen} onHide={closeModal}>
-        <Modal.Header>
+        <Modal.Header className="modalhead">
           <Modal.Title>Edit Book </Modal.Title>
-          <i
-            className="fa fa-times"
-            onClick={closeModal}
-            style={{ fontSize: "28px" }}
-          ></i>
         </Modal.Header>
         <Modal.Body>
+          <p className="text-muted">
+            <small>Please fill up the changes to update!</small>
+          </p>
           <form onSubmit={onUpdateForm} className="container">
             <div className="form-group">
               <label>Name</label>
@@ -241,10 +239,17 @@ export default function Getbooks() {
             <br />
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-success btn-sm"
               style={{ float: "right" }}
             >
               Submit
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary btn-sm"
+              onClick={closeModal}
+            >
+              Close
             </button>
           </form>
         </Modal.Body>
@@ -252,20 +257,15 @@ export default function Getbooks() {
 
       {/* modal for view book */}
       <Modal show={isViewOpen} onHide={closeViewModal}>
-        <Modal.Header>
+        <Modal.Header className="modalhead">
           <Modal.Title>View Book</Modal.Title>
-          <i
-            className="fa fa-times"
-            onClick={closeViewModal}
-            style={{ fontSize: "28px" }}
-          ></i>
         </Modal.Header>
         <Modal.Body>
-          <div className="row">
+          <div className="row ml-5">
             <p className="col"> Name: {bookname}</p>
             <p className="col"> Subject: {subject}</p>
           </div>
-          <div className="row">
+          <div className="row ml-5">
             <p className="col"> Author: {author}</p>
             <p className="col">
               {availability === "true"
@@ -275,7 +275,7 @@ export default function Getbooks() {
           </div>
           <button
             type="button"
-            className="btn btn-success btn-sm"
+            className="btn btn-success btn-sm float-right"
             disabled={availability === "false"}
           >
             <Link
@@ -284,6 +284,13 @@ export default function Getbooks() {
             >
               Issue Book
             </Link>
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary btn-sm"
+            onClick={closeViewModal}
+          >
+            Close
           </button>
         </Modal.Body>
       </Modal>

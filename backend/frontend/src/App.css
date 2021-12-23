@@ -64,15 +64,19 @@ nav img {
 }
 .fa-times {
   color: red;
+  cursor: pointer;
 }
 .fa-trash {
   color: red;
+  cursor: pointer;
 }
 .fa-pencil {
   color: orange;
+  cursor: pointer;
 }
 .fa-eye {
   color: blue;
+  cursor: pointer;
 }
 /* .fa-plus {
   color: blue;
@@ -115,4 +119,9 @@ small a :hover {
 }
 .issue :hover {
   color: aliceblue;
+}
+.modalhead {
+  background-color: green;
+  color: white;
+  border: none;
 }

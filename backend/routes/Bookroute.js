@@ -62,7 +62,8 @@ router.delete("/deletebook/:id", function (req, res) {
   });
 });
 router.post("/issuebook/:id", function (req, res) {
-  Book.findByIdAndUpdate(req.params.id, req.body, function (err) {
+  const body = { ...req.body, Availability: "false" };
+  Book.findByIdAndUpdate(req.params.id, body, function (err) {
     if (err) {
       console.log(err);
     } else {

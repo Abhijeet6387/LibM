@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../images/logo.png";
 // import React, { useState } from "react";
 // import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -20,7 +21,7 @@ export default function Navbar() {
               fontFamily: "inherit",
             }}
           >
-            <img src="logo.png" alt="logo"></img>
+            <img src={logo} alt="logo"></img>
             Library Management System
           </h4>
           <button

@@ -23,11 +23,11 @@ const bookSchema = new Schema({
     default: true,
   },
   Issuedate: {
-    type: String,
+    type: Date,
     default: null,
   },
   Expirydate: {
-    type: String,
+    type: Date,
     default: null,
   },
   Ownername: {

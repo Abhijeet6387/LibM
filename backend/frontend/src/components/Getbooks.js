@@ -279,7 +279,7 @@ export default function Getbooks() {
             disabled={availability === "false"}
           >
             <Link
-              to={availability === "true" ? "/issuebook" : ""}
+              to={availability === "true" ? "/issuebook/" + id : ""}
               style={{ color: "white" }}
             >
               Issue Book

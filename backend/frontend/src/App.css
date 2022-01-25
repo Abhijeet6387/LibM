@@ -1,7 +1,6 @@
 .hover-link :hover {
   color: white;
   background-color: green;
-  border-radius: 40%;
 }
 .nav-link i {
   color: white;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -8,6 +9,8 @@ export default function Getbooks() {
   const [bookname, setBookname] = useState("");
   const [author, setAuthor] = useState("");
   const [subject, setSubject] = useState("");
+  const [ownername, setOwnerName] = useState("");
+  const [expirydate, setExpiryDate] = useState("");
   const [availability, setAvailability] = useState(true);
   const [id, setId] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +32,8 @@ export default function Getbooks() {
     setSubject(singlebook.Subject);
     setAvailability(singlebook.Availability.toString());
     setIsViewOpen(true);
+    setOwnerName(singlebook.Ownername);
+    setExpiryDate(singlebook.Expirydate);
   };
 
   // function to close update modal
@@ -271,6 +276,16 @@ export default function Getbooks() {
               {availability === "true"
                 ? "Availability: Yes"
                 : "Availability: No"}
+            </p>
+          </div>
+          <div className="row ml-5">
+            <p className="col">
+              {availability === "false" ? `Issued By: ${ownername}` : "N/A"}
+            </p>
+            <p className="col">
+              {availability === "false"
+                ? `Issued Till: ${moment(expirydate).format("YYYY-MM-DD")}`
+                : "N/A"}
             </p>
           </div>
           <button

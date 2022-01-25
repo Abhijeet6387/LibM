@@ -26,7 +26,7 @@ export default function Login() {
           </div>
           <small>
             Don't have a account yet?
-            <Link to="/signup">
+            <Link to="/signup" style={{ textDecoration: "none" }}>
               <b> Sign Up</b>
             </Link>
           </small>

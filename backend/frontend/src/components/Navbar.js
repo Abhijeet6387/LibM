@@ -1,14 +1,7 @@
 import React from "react";
 import logo from "../images/logo.png";
-// import React, { useState } from "react";
-// import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 export default function Navbar() {
-  // const [showModal, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
-
   return (
     <>
       <div className="container-fluid">
@@ -60,30 +53,10 @@ export default function Navbar() {
                   <i className="fa fa-fw fa-sign-in"></i>Sign In
                 </Link>
               </li>
-              {/* <li className="nav-item hover-link">
-                <Link className="nav-link" onClick={handleShow} to="/home">
-                  <i className="fa fa-fw fa-user"></i>Profile
-                </Link>
-              </li>
-          */}
             </ul>
           </div>
         </nav>
       </div>
-
-      {/* LOGIN MODAL */}
-      {/* <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header>
-          <Modal.Title>Profile</Modal.Title>
-          <i
-            className="fa fa-times"
-            onClick={handleClose}
-            style={{ fontSize: "28px" }}
-          ></i>
-        </Modal.Header>
-
-        <Modal.Body></Modal.Body>
-      </Modal> */}
     </>
   );
 }

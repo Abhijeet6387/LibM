@@ -45,7 +45,7 @@ export default function Register() {
           </div>
           <small>
             Already have an account?
-            <Link to="/signin">
+            <Link to="/signin" style={{ textDecoration: "none" }}>
               <b> Sign In</b>
             </Link>
           </small>

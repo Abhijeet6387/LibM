@@ -1,6 +1,7 @@
 .hover-link :hover {
   color: white;
   background-color: green;
+  border-radius: 20px;
 }
 .nav-link i {
   color: white;
@@ -78,9 +79,6 @@ nav img {
   color: blue;
   cursor: pointer;
 }
-/* .fa-plus {
-  color: blue;
-} */
 .fa-check-circle {
   color: green;
 }
@@ -92,11 +90,9 @@ nav img {
   height: 34px;
   border-radius: 20px;
   padding-left: 35px;
-  border-color: green;
-  box-shadow: none;
 }
 .search-box i {
-  color: black;
+  color: green;
   position: absolute;
   font-size: 19px;
   top: 8px;
@@ -124,4 +120,9 @@ small a :hover {
   background-color: green;
   color: white;
   border: none;
+}
+input[type="text"]:focus {
+  border: 3px solid green;
+  outline: none !important;
+  box-shadow: none !important;
 }

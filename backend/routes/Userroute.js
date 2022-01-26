@@ -3,7 +3,7 @@ const router = express.Router();
 const Users = require("../models/Usermodel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-// const checkAuth = require("../utils/checkAuth");
+const checkAuth = require("../utils/checkAuth");
 
 //register
 router.post("/register", (req, res) => {
@@ -76,6 +76,21 @@ router.post("/login", (req, res) => {
         }
       );
     }
+  });
+});
+
+router.get("/getInfo", checkAuth, (req, res) => {
+  Users.findById(req.userData.id, (err, user) => {
+    const filteredUser = {
+      name: user.name,
+      email: user.email,
+      contact: user.contact,
+      isPatron: user.isPatron,
+    };
+    return res.status(200).json({
+      message: "success",
+      info: filteredUser,
+    });
   });
 });
 module.exports = router;

@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { validateEmail } from "../helpers/validation";
-export default function Login() {
+
+export default function Login(props) {
   const [user, setUser] = useState({ email: "", password: "" });
   const onChangeUser = (e) => {
     //  spread operator ...
     setUser({ ...user, [e.target.name]: e.target.value });
   };
+
   const onSubmitForm = (e) => {
     e.preventDefault();
     if (!validateEmail(user.email)) alert("Enter the valid email");
@@ -19,11 +21,15 @@ export default function Login() {
           alert(res.data.message);
           console.log(res.data);
           localStorage.setItem("my_token", res.data.token);
-          window.location.href = "/home";
+          //
         })
         .catch((err) => {
           alert(err.message);
           console.log(err);
+        })
+        .finally(() => {
+          setUser({ email: "", password: "" });
+          window.location.href = "/home";
         });
     }
   };

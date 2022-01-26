@@ -194,7 +194,16 @@ export default function Getbooks() {
             </div>
           )}
         </div>
-        <p className="text-muted">
+        <button type="button" className="btn btn-success">
+          <Link
+            className="addbook"
+            to="/addbook"
+            style={{ textDecoration: "none" }}
+          >
+            <i className="fa fa-fw fa-plus"></i>Add Book
+          </Link>
+        </button>
+        <p className="text-muted" style={{ fontSize: "4px" }}>
           Click on the eye button in actions to view the details of the book and
           issue it!
         </p>

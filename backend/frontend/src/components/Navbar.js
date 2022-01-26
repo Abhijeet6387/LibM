@@ -43,16 +43,19 @@ export default function Navbar() {
                   <i className="fa fa-fw fa-book"></i>Books
                 </Link>
               </li>
-              <li className="nav-item hover-link">
-                <Link className="nav-link" to="/addbook">
-                  <i className="fa fa-fw fa-plus"></i>Add Book
-                </Link>
-              </li>
-              <li className="nav-item hover-link">
-                <Link className="nav-link" to="/signin">
-                  <i className="fa fa-fw fa-sign-in"></i>Sign In
-                </Link>
-              </li>
+              {!localStorage.getItem("my_token") ? (
+                <li className="nav-item hover-link">
+                  <Link className="nav-link" to="/signin">
+                    <i className="fa fa-fw fa-sign-in"></i>Sign In
+                  </Link>
+                </li>
+              ) : (
+                <li className="nav-item hover-link">
+                  <Link className="nav-link" to="/profile">
+                    <i className="fa fa-fw fa-user"></i>Profile
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

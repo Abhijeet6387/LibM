@@ -19,7 +19,7 @@ export default function Register() {
     setPass(e.target.value);
   };
   const onChangeIsPatron = (e) => {
-    setIsPatron(e.target.value);
+    setIsPatron(!isPatron);
   };
   const onChangeContact = (e) => {
     setContact(e.target.value);
@@ -39,6 +39,7 @@ export default function Register() {
         })
         .then((res) => {
           alert("User added successfully");
+          window.location.href = "/login";
         })
         .catch((err) => {
           console.log(err);
@@ -93,7 +94,7 @@ export default function Register() {
               <input
                 className="form-check-input"
                 type="checkbox"
-                value={isPatron}
+                checked={isPatron}
                 onChange={onChangeIsPatron}
                 id="checkpatron"
               />

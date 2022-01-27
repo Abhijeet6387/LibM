@@ -2,14 +2,17 @@ import React from "react";
 import user from "../images/user2.png";
 export default function Home(props) {
   const handleLogout = () => {
-    localStorage.removeItem("my_token");
-    window.location.href = "/home";
+    if (window.confirm("Are you sure?") === true) {
+      localStorage.removeItem("my_token");
+      alert("Logged Out!");
+      window.location.href = "/home";
+    }
   };
   return (
     <div className="card container">
       <h4 className="pt-4">Welcome to LibM, User!</h4>
       <div className="card-body row">
-        <div className="col-sm-4">
+        <div className="col-md-5 col-lg-4">
           <img
             className="card-img-top"
             src={user}
@@ -18,11 +21,11 @@ export default function Home(props) {
               height: "200px",
               width: "auto",
               marginBottom: "10px",
-              marginLeft: "25%",
+              marginLeft: "40px",
             }}
           />
         </div>
-        <div className="col-sm-8">
+        <div className="col-md-7 col-lg-8">
           <div className="row">
             <div className="col">
               <ul className="list-group list-group-flush">

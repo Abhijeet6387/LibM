@@ -63,7 +63,7 @@ export default function Getbooks() {
           Subject: subject,
         })
         .then((res) => {
-          alert("book updated");
+          alert("Book Updated Successfully!");
           console.log(res.data);
           setBookname("");
           setAuthor("");
@@ -99,10 +99,11 @@ export default function Getbooks() {
   const handleDelete = (id) => {
     axios
       .delete("/deletebook/" + id)
-      .then((res) => {
-        console.log(res);
-        alert("Delete this book ?");
-        getbooks();
+      .then(() => {
+        if (window.confirm("Are you sure?")) {
+          alert("Book is Deleted Successfully!");
+          getbooks();
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -134,7 +135,7 @@ export default function Getbooks() {
                   </div>
                 </div>
               </div>
-              <div style={{ overflow: "auto", height: "500px" }}>
+              <div style={{ overflow: "auto", height: "400px" }}>
                 <table className="table table-hover">
                   <thead>
                     <tr>
@@ -289,12 +290,14 @@ export default function Getbooks() {
           </div>
           <div className="row ml-5">
             <p className="col">
-              {availability === "false" ? `Issued By: ${ownername}` : "N/A"}
+              {availability === "false"
+                ? `Issued By: ${ownername}`
+                : "Issued By: N/A"}
             </p>
             <p className="col">
               {availability === "false"
                 ? `Issued Till: ${moment(expirydate).format("YYYY-MM-DD")}`
-                : "N/A"}
+                : "Issued Till: N/A"}
             </p>
           </div>
           <button

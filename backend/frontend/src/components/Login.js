@@ -21,7 +21,6 @@ export default function Login(props) {
           alert(res.data.message);
           console.log(res.data);
           localStorage.setItem("my_token", res.data.token);
-          //
         })
         .catch((err) => {
           alert(err.message);

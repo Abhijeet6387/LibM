@@ -39,7 +39,7 @@ export default function Register() {
         })
         .then((res) => {
           alert("User added successfully");
-          window.location.href = "/login";
+          window.location.href = "/signin";
         })
         .catch((err) => {
           console.log(err);

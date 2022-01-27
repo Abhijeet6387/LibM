@@ -139,3 +139,6 @@ input[type="password"]:focus {
 .addbook:hover {
   color: white;
 }
+.disabled {
+  opacity: 0.6;
+}

@@ -82,6 +82,7 @@ router.post("/login", (req, res) => {
 router.get("/getInfo", checkAuth, (req, res) => {
   Users.findById(req.userData.id, (err, user) => {
     const filteredUser = {
+      userId: user._id,
       name: user.name,
       email: user.email,
       contact: user.contact,

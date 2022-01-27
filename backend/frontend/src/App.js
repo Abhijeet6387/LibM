@@ -39,9 +39,18 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home />}></Route>
-          <Route path="/books" element={<Getbooks userInfo />}></Route>
-          <Route path="/addbook" element={<AddBook userInfo />}></Route>
-          <Route path="/issuebook/:id" element={<IssueBook userInfo />}></Route>
+          <Route
+            path="/books"
+            element={<Getbooks userInfo={userInfo} />}
+          ></Route>
+          <Route
+            path="/addbook"
+            element={<AddBook userInfo={userInfo} />}
+          ></Route>
+          <Route
+            path="/issuebook/:id"
+            element={<IssueBook userInfo={userInfo} />}
+          ></Route>
           <Route path="/signin" element={<Login />}></Route>
           <Route path="/signup" element={<Register />}></Route>
           <Route

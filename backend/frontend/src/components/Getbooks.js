@@ -4,7 +4,8 @@ import { Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default function Getbooks() {
+export default function Getbooks(props) {
+  // console.log(props.userInfo);
   const [booklist, setBooklist] = useState([]);
   const [bookname, setBookname] = useState("");
   const [author, setAuthor] = useState("");
@@ -97,6 +98,9 @@ export default function Getbooks() {
 
   // function to delete a book
   const handleDelete = (id) => {
+    // if (props.userInfo.isPatron) {
+    //   alert("You are not authorized to delete this book!");
+    // }
     axios
       .delete("/deletebook/" + id)
       .then(() => {
@@ -169,17 +173,30 @@ export default function Getbooks() {
                         </td>
                         <td>
                           <div className="actions">
-                            {/* <i className="fa fa-wh fa-plus"></i> */}
-                            <i
-                              className="fa fa-fw fa-pencil"
-                              onClick={() => openModal(singlebook)}
-                              title="Update"
-                            ></i>
-                            <i
-                              className="fa fa-fw fa-trash"
-                              onClick={() => handleDelete(singlebook._id)}
-                              title="Delete"
-                            ></i>
+                            {!props.userInfo.isPatron ? (
+                              <i
+                                className="fa fa-fw fa-pencil"
+                                onClick={() => openModal(singlebook)}
+                                title="Update"
+                              ></i>
+                            ) : (
+                              <i
+                                className="fa fa-fw fa-pencil disabled"
+                                title="Disabled"
+                              ></i>
+                            )}
+                            {!props.userInfo.isPatron ? (
+                              <i
+                                className="fa fa-fw fa-trash"
+                                onClick={() => handleDelete(singlebook._id)}
+                                title="Delete"
+                              ></i>
+                            ) : (
+                              <i
+                                className="fa fa-fw fa-trash disabled"
+                                title="Disabled"
+                              ></i>
+                            )}
                             <i
                               className="fa fa-wh fa-eye"
                               onClick={() => openViewModal(singlebook)}
@@ -195,7 +212,11 @@ export default function Getbooks() {
             </div>
           )}
         </div>
-        <button type="button" className="btn btn-success">
+        <button
+          type="button"
+          className="btn btn-success"
+          disabled={props.userInfo.isPatron ? true : false}
+        >
           <Link
             className="addbook"
             to="/addbook"

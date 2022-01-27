@@ -173,7 +173,7 @@ export default function Getbooks(props) {
                         </td>
                         <td>
                           <div className="actions">
-                            {!props.userInfo.isPatron ? (
+                            {!(!props.userInfo || props.userInfo.isPatron) ? (
                               <i
                                 className="fa fa-fw fa-pencil"
                                 onClick={() => openModal(singlebook)}
@@ -185,7 +185,7 @@ export default function Getbooks(props) {
                                 title="Disabled"
                               ></i>
                             )}
-                            {!props.userInfo.isPatron ? (
+                            {!(!props.userInfo || props.userInfo.isPatron) ? (
                               <i
                                 className="fa fa-fw fa-trash"
                                 onClick={() => handleDelete(singlebook._id)}
@@ -215,7 +215,7 @@ export default function Getbooks(props) {
         <button
           type="button"
           className="btn btn-success"
-          disabled={props.userInfo.isPatron ? true : false}
+          disabled={!props.userInfo || props.userInfo.isPatron ? true : false}
         >
           <Link
             className="addbook"

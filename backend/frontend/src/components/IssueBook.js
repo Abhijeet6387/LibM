@@ -54,6 +54,7 @@ export default function ScheduleClass(props) {
           setContact("");
           setIssuedate("");
           setExpdate("");
+          window.location.href = "/books";
         })
         .catch((err) => {
           console.log(err);

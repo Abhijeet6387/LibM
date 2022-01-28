@@ -27,7 +27,8 @@ export default function Books() {
           Subject: subject,
         })
         .then((res) => {
-          alert("book added");
+          alert("book is added");
+          window.location.href = "/books";
         })
         .catch((err) => {
           console.log(err);

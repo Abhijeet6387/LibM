@@ -21,7 +21,7 @@ export default function Books() {
       alert("Please fill the details");
     } else {
       axios
-        .post("/addbook", {
+        .post("/books/addbook", {
           Name: bookname,
           Author: author,
           Subject: subject,

@@ -58,7 +58,7 @@ export default function Getbooks(props) {
     } else {
       console.log(bookname, author, subject);
       axios
-        .post("/updatebook/" + id, {
+        .post("/books/updatebook/" + id, {
           Name: bookname,
           Author: author,
           Subject: subject,
@@ -86,7 +86,7 @@ export default function Getbooks(props) {
   // function to get booklist
   const getbooks = () => {
     axios
-      .get("/getbook")
+      .get("/books/getbook")
       .then((res) => {
         // console.log("fetching");
         setBooklist(res.data);
@@ -102,7 +102,7 @@ export default function Getbooks(props) {
     //   alert("You are not authorized to delete this book!");
     // }
     axios
-      .delete("/deletebook/" + id)
+      .delete("/books/deletebook/" + id)
       .then(() => {
         if (window.confirm("Are you sure?")) {
           alert("Book is Deleted Successfully!");
@@ -212,19 +212,22 @@ export default function Getbooks(props) {
             </div>
           )}
         </div>
-        <button
-          type="button"
-          className="btn btn-success"
-          disabled={!props.userInfo || props.userInfo.isPatron ? true : false}
-        >
-          <Link
-            className="addbook"
-            to="/addbook"
-            style={{ textDecoration: "none" }}
-          >
+        {!props.userInfo || props.userInfo.isPatron ? (
+          <button type="button" className="btn btn-success" disabled>
             <i className="fa fa-fw fa-plus"></i>Add Book
-          </Link>
-        </button>
+          </button>
+        ) : (
+          <button type="button" className="btn btn-success">
+            <Link
+              className="addbook"
+              to="/addbook"
+              style={{ textDecoration: "none" }}
+            >
+              <i className="fa fa-fw fa-plus"></i>Add Book
+            </Link>
+          </button>
+        )}
+
         <p className="text-muted" style={{ fontSize: "4px" }}>
           Click on the eye button in actions to view the details of the book and
           issue it!

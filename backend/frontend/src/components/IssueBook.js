@@ -42,7 +42,7 @@ export default function ScheduleClass(props) {
       alert("Please fill the details");
     } else {
       axios
-        .post("/issuebook/" + id, {
+        .post("/books/issuebook/" + id, {
           Ownername: ownername,
           Ownercontact: contact,
           Issuedate: issuedate,

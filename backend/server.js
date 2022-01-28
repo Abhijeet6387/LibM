@@ -1,6 +1,7 @@
 //import libraries and files
 const express = require("express");
 const app = express();
+const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const db =
@@ -17,8 +18,13 @@ app.use(
 app.use(bodyParser.json());
 
 // API's connections
-app.use("/", Bookroute);
+app.use("/books", Bookroute);
 app.use("/users", Userroute);
+
+app.use(express.static(path.join(__dirname, "frontend", "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
+});
 
 // DB and server setup
 mongoose.Promise = global.Promise;
@@ -33,6 +39,6 @@ mongoose.connect(
   }
 );
 
-app.listen(4000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("Server is listening on port: 4000");
 });

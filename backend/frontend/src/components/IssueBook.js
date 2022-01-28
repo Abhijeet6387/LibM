@@ -57,6 +57,8 @@ export default function ScheduleClass(props) {
         })
         .catch((err) => {
           console.log(err);
+          alert("Please login again to continue..");
+          window.location.href("/signin");
         });
     }
   };

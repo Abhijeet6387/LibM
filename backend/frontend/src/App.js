@@ -27,8 +27,14 @@ function App() {
           Authorization: "Bearer " + localStorage.getItem("my_token"),
         },
       })
-      .then((res) => setUserInfo(res.data.info))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setUserInfo(res.data.info);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Please login again to continue..");
+        window.location.href("/signin");
+      });
   };
   console.log(userInfo);
   return (

@@ -43,12 +43,12 @@ export default function Books() {
         <h4>Add Book</h4>
         <form autoComplete="off" onSubmit={onSubmitForm} className="container">
           <div className="form-group">
-            <label>Name</label>
+            <label>Book Name</label>
             <input
               type="text"
               className="form-control"
               id="addbook"
-              placeholder="Enter Name"
+              placeholder="Enter Book's Name"
               value={bookname}
               onChange={onChangeBookName}
             />
@@ -75,8 +75,8 @@ export default function Books() {
               onChange={onChangeSubject}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Add
+          <button type="submit" className="btn btn-success btn-block mt-4 mb-4">
+            <i className="fa fa-fw fa-plus"></i>Add
           </button>
         </form>
       </div>

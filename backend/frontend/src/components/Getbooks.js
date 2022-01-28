@@ -76,7 +76,7 @@ export default function Getbooks(props) {
         .catch((err) => {
           console.log(err);
           alert("Please login again to continue..");
-          window.location.href("/signin");
+          window.location.href = "/signin";
         });
     }
   };
@@ -96,7 +96,7 @@ export default function Getbooks(props) {
       .catch((err) => {
         console.log(err);
         alert("Please login again to continue..");
-        window.location.href("/signin");
+        window.location.href = "/signin";
       });
   };
 
@@ -116,7 +116,7 @@ export default function Getbooks(props) {
       .catch((err) => {
         console.log(err);
         alert("Please login again to continue..");
-        window.location.href("/signin");
+        window.location.href = "/signin";
       });
   };
 

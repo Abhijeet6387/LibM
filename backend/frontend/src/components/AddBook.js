@@ -32,7 +32,7 @@ export default function Books() {
         .catch((err) => {
           console.log(err);
           alert("Please login again to continue..");
-          window.location.href("/signin");
+          window.location.href = "/signin";
         });
     }
     setBookname("");

@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <Router>
-        <Background></Background>
+        {/* <Background></Background> */}
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home />}></Route>

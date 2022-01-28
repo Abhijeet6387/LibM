@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "../images/bg-libm.jpg";
+import bg from "../images/bg-libm.png";
 export default function Body() {
   return (
     <div

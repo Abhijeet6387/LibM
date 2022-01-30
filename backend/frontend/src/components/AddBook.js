@@ -32,6 +32,7 @@ export default function Books() {
         })
         .catch((err) => {
           console.log(err);
+          localStorage.removeItem("my_token");
           alert("Please login again to continue..");
           window.location.href = "/signin";
         });

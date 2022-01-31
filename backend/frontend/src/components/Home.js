@@ -2,10 +2,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div
-      className="card container"
-      style={{ height: "600px", overflow: "auto" }}
-    >
+    <div className="card container" style={{ height: "80%", overflow: "auto" }}>
       <div className="card-body">
         <h4>What is a Library Management System ?</h4>
         <section>

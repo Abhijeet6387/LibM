@@ -75,8 +75,6 @@ export default function Getbooks(props) {
         })
         .catch((err) => {
           console.log(err);
-          alert("Please login again to continue..");
-          window.location.href = "/signin";
         });
     }
   };
@@ -95,9 +93,6 @@ export default function Getbooks(props) {
       })
       .catch((err) => {
         console.log(err);
-        localStorage.removeItem("my_token");
-        alert("Please login again to continue..");
-        window.location.href = "/signin";
       });
   };
 
@@ -116,8 +111,6 @@ export default function Getbooks(props) {
       })
       .catch((err) => {
         console.log(err);
-        alert("Please login again to continue..");
-        window.location.href = "/signin";
       });
   };
 
@@ -204,11 +197,18 @@ export default function Getbooks(props) {
                                 title="Disabled"
                               ></i>
                             )}
-                            <i
-                              className="fa fa-wh fa-eye"
-                              onClick={() => openViewModal(singlebook)}
-                              title="View"
-                            ></i>
+                            {!!props.userInfo ? (
+                              <i
+                                className="fa fa-wh fa-eye disabled"
+                                title="Disabled"
+                              ></i>
+                            ) : (
+                              <i
+                                className="fa fa-wh fa-eye"
+                                onClick={() => openViewModal(singlebook)}
+                                title="View"
+                              ></i>
+                            )}
                           </div>
                         </td>
                       </tr>

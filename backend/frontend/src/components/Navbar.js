@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <>
       <div className="container-fluid">
@@ -43,7 +43,7 @@ export default function Navbar() {
                   <i className="fa fa-fw fa-book"></i>Books
                 </Link>
               </li>
-              {!localStorage.getItem("my_token") ? (
+              {!props.userInfo ? (
                 <li className="nav-item hover-link">
                   <Link className="nav-link" to="/signin">
                     <i className="fa fa-fw fa-sign-in"></i>Sign In

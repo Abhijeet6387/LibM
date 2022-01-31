@@ -1,6 +1,5 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Background from "./components/Background";
 import Home from "./components/Home";
 import Getbooks from "./components/Getbooks";
 import AddBook from "./components/AddBook";
@@ -32,15 +31,14 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        alert("Please login again to continue..");
-        window.location.href = "/signin";
+        localStorage.removeItem("my_token");
+        setUserInfo(null);
       });
   };
   console.log(userInfo);
   return (
     <>
       <Router>
-        {/* <Background></Background> */}
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home />}></Route>

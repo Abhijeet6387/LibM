@@ -197,7 +197,7 @@ export default function Getbooks(props) {
                                 title="Disabled"
                               ></i>
                             )}
-                            {!!props.userInfo ? (
+                            {!props.userInfo ? (
                               <i
                                 className="fa fa-wh fa-eye disabled"
                                 title="Disabled"

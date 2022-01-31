@@ -27,7 +27,7 @@ Application is based on MERN stack(MongoDB, Express, ReactJS, NodeJS)  and is de
 | Github                     | Maintaining the source code |
 | Heroku                     | Deployment of the app       |
 
-<!-- Live at - https://lib-m.herokuapp.com/ -->
+Live at - https://lib-m.herokuapp.com/
 
 Thanks for reading this!🙌🙌🙌
 

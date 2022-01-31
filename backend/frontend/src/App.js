@@ -35,11 +35,10 @@ function App() {
         setUserInfo(null);
       });
   };
-  console.log(userInfo);
   return (
     <>
       <Router>
-        <Navbar></Navbar>
+        <Navbar userInfo={userInfo}></Navbar>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home />}></Route>
